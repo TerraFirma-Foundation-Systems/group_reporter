@@ -1,0 +1,5 @@
+requests
+schedule
+msal
+python-dotenv
+aiohttp
