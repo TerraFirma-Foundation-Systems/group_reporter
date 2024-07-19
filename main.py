@@ -15,6 +15,23 @@ def load_env():
     load_dotenv()
 
 
+def validate_env_vars():
+    required_vars = [
+        "GROUP_ID",
+        "FILTER_GROUP_ID",
+        "FRESHSERVICE_DOMAIN",
+        "FRESHSERVICE_API_TOKEN",
+        "TENANT_ID",
+        "CLIENT_ID",
+        "CLIENT_SECRET",
+        "RUN_SCHEDULE",
+        "FRESHSERVICE_GROUP_ID"
+    ]
+    for var in required_vars:
+        if not os.getenv(var):
+            raise ValueError(f"Environment variable {var} is not set")
+
+
 def run_task():
     logging.info("Running task...")
     group_id = os.getenv("GROUP_ID")
@@ -41,7 +58,7 @@ def run_task():
 
 
 def format_user_list(users):
-    table = "<table><tr><th>Display Name</th><th>User Principal Name</th></tr>"
+    table = "<table><tr><th><b>Display Name</b></th><th><b>User Principal Name</b></th></tr>"
     for user in users:
         table += f"<tr><td>{user['displayName']
                             }</td><td>{user['userPrincipalName']}</td></tr>"
@@ -76,6 +93,7 @@ def schedule_task(schedule_type):
 
 if __name__ == "__main__":
     load_env()
+    validate_env_vars()
     run_schedule = os.getenv("RUN_SCHEDULE", "friday")
     logging.info(f"Scheduling task with schedule type: {run_schedule}")
 

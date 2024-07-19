@@ -10,3 +10,5 @@ services:
       - CLIENT_ID=${CLIENT_ID}
       - CLIENT_SECRET=${CLIENT_SECRET}
       - RUN_SCHEDULE=${RUN_SCHEDULE}
+      - FRESHSERVICE_GROUP_ID=${FRESHSERVICE_GROUP_ID}
+    restart: always
