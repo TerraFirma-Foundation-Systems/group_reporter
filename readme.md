@@ -1,4 +1,4 @@
-# SSO Reporter
+# Group Reporter
 
 SSO Reporter is a tool to monitor users in Microsoft Azure AD who are not in a specified group and create a ticket in FreshService with the list of these users. It is designed to run on a schedule and can be deployed using Docker.
 
