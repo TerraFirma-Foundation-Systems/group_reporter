@@ -3,6 +3,7 @@ services:
     build: .
     environment:
       - GROUP_ID=${GROUP_ID}
+      - FILTER_GROUP_ID=${FILTER_GROUP_ID}
       - FRESHSERVICE_DOMAIN=${FRESHSERVICE_DOMAIN}
       - FRESHSERVICE_API_TOKEN=${FRESHSERVICE_API_TOKEN}
       - TENANT_ID=${TENANT_ID}
