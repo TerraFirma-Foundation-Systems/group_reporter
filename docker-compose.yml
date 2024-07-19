@@ -1,8 +1,6 @@
 services:
   user-checker:
     build: .
-    env_file:
-      - .env
     environment:
       - GROUP_ID=${GROUP_ID}
       - FRESHSERVICE_DOMAIN=${FRESHSERVICE_DOMAIN}
