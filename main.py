@@ -98,7 +98,7 @@ if __name__ == "__main__":
     logging.info(f"Scheduling task with schedule type: {run_schedule}")
 
     # Run the task immediately for testing
-    run_task()
+    # run_task()
 
     # Schedule the task as usual
     schedule_task(run_schedule)
